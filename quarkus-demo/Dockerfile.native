@@ -1,0 +1,11 @@
+FROM maven:3.9.8-eclipse-temurin-21 AS build
+WORKDIR /quarkus-demo
+COPY pom.xml .
+COPY src ./src
+RUN mvn package -DskipTests
+
+FROM maven:3.9.8-eclipse-temurin-21
+WORKDIR /app
+COPY --from=build /quarkus-demo/target/*-runner /app/application
+EXPOSE 8080
+ENTRYPOINT ["./application"]
