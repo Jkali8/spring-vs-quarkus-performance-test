@@ -9,7 +9,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public ResponseEntity<String> getHello() {
-        return ResponseEntity.ok("Hello World");
+        return ResponseEntity.ok("Hello from Spring Rest");
     }
 
 }

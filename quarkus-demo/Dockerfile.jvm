@@ -4,7 +4,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn package -DskipTests
 
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/quarkus-app/ ./
 EXPOSE 8080
