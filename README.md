@@ -117,13 +117,6 @@ chmod +x quick-test.sh
 ./quick-test.sh
 ```
 
-### Complete Test Suite
-```bash
-cd tests
-chmod +x run-all-tests.sh
-./run-all-tests.sh > results.txt
-```
-
 ### Individual Tests
 ```bash
 # Startup time test
